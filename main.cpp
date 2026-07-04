@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <string>
 #include <limits>
+#include <cctype>
 
 using namespace std;
 
@@ -43,8 +44,7 @@ int main()
                 cout << "\nThank you for using the program!\n";
                 break;
             }
-
-            if (choice == 1)
+if (choice >= 1 && choice <= 3)
 {
     string text;
 
@@ -53,9 +53,38 @@ int main()
     cout << "\nEnter a string: ";
     getline(cin, text);
 
-    reverse(text.begin(), text.end());
+    if (text.empty())
+    {
+        cout << "\nInput cannot be empty!\n";
+        continue;
+    }
 
-    cout << "\nReversed String: " << text << endl;
+    if (choice == 1)
+    {
+        reverse(text.begin(), text.end());
+
+        cout << "\nReversed String: " << text << endl;
+    }
+
+    else if (choice == 2)
+    {
+        for (char &ch : text)
+        {
+            ch = toupper(ch);
+        }
+
+        cout << "\nUppercase String: " << text << endl;
+    }
+
+    else if (choice == 3)
+    {
+        for (char &ch : text)
+        {
+            ch = tolower(ch);
+        }
+
+        cout << "\nLowercase String: " << text << endl;
+    }
 }
 else
 {
