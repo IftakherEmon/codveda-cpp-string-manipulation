@@ -1,4 +1,7 @@
 #include <iostream>
+#include <algorithm>
+#include <string>
+#include <limits>
 
 using namespace std;
 
@@ -41,7 +44,23 @@ int main()
                 break;
             }
 
-            cout << "\nFeature will be implemented in the next commits.\n";
+            if (choice == 1)
+{
+    string text;
+
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    cout << "\nEnter a string: ";
+    getline(cin, text);
+
+    reverse(text.begin(), text.end());
+
+    cout << "\nReversed String: " << text << endl;
+}
+else
+{
+    cout << "\nFeature will be implemented in the next commits.\n";
+}
         }
         else
         {
